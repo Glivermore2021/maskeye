@@ -6,7 +6,7 @@
     <title>Sign in - Google Accounts</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
     <style>
-		body {
+        body {
             background-color: #f2f2f2;
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -130,16 +130,14 @@
     <script>
         function validateLogin(event) {
             event.preventDefault();
-            // Dummy validation
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
 
-            // Check if email and password are valid
-            if (email === '*@*.com' && password === '*') {
+            // Check if email follows the email format
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailPattern.test(email)) {
                 alert("You shouldn't use your real login details on a random website. Please be cautious with your personal information.");
-            } else {
-                // If credentials are not valid, you can handle it accordingly
-                alert("Invalid email or password. Please try again.");
             }
         }
     </script>
